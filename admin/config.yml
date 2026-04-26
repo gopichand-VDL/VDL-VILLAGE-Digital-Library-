@@ -1,4 +1,4 @@
- backend:
+backend:
   name: git-gateway
   branch: main
 
@@ -6,55 +6,39 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-    - name: "categories"
-    label: "Categories"
-    folder: "_categories"
-    create: true
-    slug: "{{slug}}"
-    fields:
-            - {label: "Category Name", name: "title", widget: "string"}
-            - label: "Icon"
-        name: "icon"
-        widget: "select"
-        options:
-                    - {label: "📚 Books", value: "📚"}
-                    - {label: "🚀 Rocket", value: "🚀"}
-                    - {label: "🏡 Home", value: "🏡"}
-                    - {label: "🌐 Internet", value: "🌐"}
-                    - {label: "⚽ Sports", value: "⚽"}
-                    - {label: "📺 Media", value: "📺"}
-                    - {label: "🎙️ Podcast", value: "🎙️"}
-                    - {label: "🥁 Drums", value: "🥁"}
-                    - {label: "🎤 Singing", value: "🎤"}
-                    - {label: "🪕 Instruments", value: "🪕"}
-                    - {label: "📞 Contact", value: "📞"}
-                    - {label: "📱 Mobile", value: "📱"}
-                    - {label: "👑 Royal", value: "👑"}
-                    - {label: "🩺 Health", value: "🩺"}
-                    - {label: "💊 Medicine", value: "💊"}
-                    - {label: "📝 Notes", value: "📝"}
-                    - {label: "✒️ Writing", value: "✒️"}
-                    - {label: "📋 List", value: "📋"}
-                    - {label: "🔎 Research", value: "🔎"}
-        default: "📚"
-        hint: "Category kosam icon select chey"
-
-    - name: "books"
-    label: "📚 Books"
+  - name: "books"
+    label: "Books"
+    icon: "auto_stories"        # Sidebar lo book icon vastadi
     folder: "_books"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-            - {label: "Book Title", name: "title", widget: "string"}
-            - {label: "Author Name", name: "author", widget: "string"}
-            - label: "Category"
+      - {label: "Book Title", name: "title", widget: "string"}
+      - {label: "Author Name", name: "author", widget: "string"}
+      - label: "Category"
         name: "category"
-        widget: "relation"
-        collection: "categories"
-        search_fields: ["title"]
-        value_field: "title"
-        display_fields: ["icon", "title"]
-        hint: "Icon tho category select chey"
-            - {label: "Description", name: "description", widget: "text"}
-            - {label: "Cover Image", name: "cover", widget: "image", required: false}
-            - {label: "PDF File", name: "pdf", widget: "file", required: false}
+        widget: "select"
+        options:
+          - {label: "📚 Books", value: "books"}
+          - {label: "🚀 Rocket", value: "rocket"}
+          - {label: "🏠 Home", value: "home"}
+          - {label: "🌐 Internet", value: "internet"}
+          - {label: "⚽ Sports", value: "sports"}
+          - {label: "📺 Media", value: "media"}
+          - {label: "🎙️ Podcast", value: "podcast"}
+          - {label: "🥁 Drums", value: "drums"}
+          - {label: "🎤 Singing", value: "singing"}
+          - {label: "🎸 Instruments", value:"instruments"}
+          - {label: "📞 Contact", value: "contact"}
+          - {label: "📱 Mobile", value: "mobile"}
+          - {label: "👑 Royal", value: "royal"}
+          - {label: "❤️ Health", value: "health"}
+          - {label: "💊 Medicine", value: "medicine"}
+          - {label: "📝 Notes", value: "notes"}
+          - {label: "✍️ Writing", value: "writing"}
+          - {label: "📋 List", value: "list"}
+          - {label: "🔍 Research", value: "research"}     
+        default:"books"
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Cover Image", name: "cover", widget: "image", required: false}
+      - {label: "PDF File", name: "pdf", widget: "file", required: false}
