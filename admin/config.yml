@@ -18,25 +18,14 @@ collections:
       - label: "Category"
         name: "category"
         widget: "select"
-        options:
-          - {label: "📚 Books", value: "books"}
-          - {label: "🚀 Rocket", value: "rocket"}
-          - {label: "🏠 Home", value: "home"}
-          - {label: "🌐 Internet", value: "internet"}
-          - {label: "⚽ Sports", value: "sports"}
-          - {label: "📺 Media", value: "media"}
-          - {label: "🎙️ Podcast", value: "podcast"}
-          - {label: "🥁 Drums", value: "drums"}
-          - {label: "🎤 Singing", value: "singing"}
-          - {label: "📞 Contact", value: "contact"}
-          - {label: "📱 Mobile", value: "mobile"}
-          - {label: "👑 Royal", value: "royal"}
-          - {label: "❤️ Health", value: "health"}
-          - {label: "💊 Medicine", value: "medicine"}
-          - {label: "📝 Notes", value: "notes"}
-          - {label: "✍️ Writing", value: "writing"}
-          - {label: "📋 List", value: "list"}
-          - {label: "🔍 Research", value: "research"}     
+    options:
+      - Story
+      - Science
+      - History
+      - Telugu
+      - English
+      - Kids
+    default: "Story" 
         default: "books"
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Cover Image", name: "cover", widget: "image", required: false}
