@@ -4,26 +4,31 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VDL-VILLAGE Admin Panel</title>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-</body>
+
   <style>
-    body{margin:0;background:#0f172a;color:#fff;font-family:sans-serif}
-    .loading{text-align:center;padding:50px;font-size:18px}
+    body{
+      margin:0;
+      background:#0f172a;
+      color:#fff;
+      font-family:sans-serif;
+    }
+
+    .loading{
+      text-align:center;
+      padding:50px;
+      font-size:18px;
+    }
   </style>
 </head>
+
 <body>
-  <div class="loading">📚 VDL Admin Panel Loading...</div>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
+
+  <div class="loading">
+    📚 VDL Admin Panel Loading...
+  </div>
+
+  <!-- Decap CMS Loader -->
+  <script src="https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js"></script>
+
 </body>
 </html>
