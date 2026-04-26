@@ -26,7 +26,6 @@ collections:
       - English
       - Kids
     default: "Story" 
-        default: "books"
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Cover Image", name: "cover", widget: "image", required: false}
-      - {label: "PDF File", name: "pdf", widget: "file", required: false}
+      - {label: "Cover Image", name: "cover_image", widget: "image", required: false}
+      - {label: "PDF File", name: "pdf_file", widget: "file", required: false}
