@@ -20,13 +20,13 @@ collections:
         name: "category"
         widget: "select"
         options:
-                    - Story
-                    - Science
-                    - History
-                    - Telugu
-                    - English
-                    - Kids
-        default: "Story"
-            - {label: "Description", name: "description", widget: "text"}
-            - {label: "Cover Image", name: "cover_image", widget: "image", required: false}
-            - {label: "PDF File", name: "pdf_file", widget: "file", required: false}
+      - Story
+      - Science
+      - History
+      - Telugu
+      - English
+      - Kids
+    default: "Story"
+  - {label: "Description", name: "description", widget: "text"}
+  - {label: "Cover Image", name: "cover_image", widget: "image", required: false}
+  - {label: "PDF File", name: "pdf_file", widget: "file", required: false}
