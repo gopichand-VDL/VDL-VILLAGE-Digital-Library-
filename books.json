@@ -1,0 +1,60 @@
+{
+  "categories": [
+    {
+      "title": "Stories",
+      "icon": "🎭"
+    },
+    {
+      "title": "Science", 
+      "icon": "🔬"
+    },
+    {
+      "title": "History",
+      "icon": "🏛️"
+    },
+    {
+      "title": "Comics",
+      "icon": "😂"
+    },
+    {
+      "title": "Biography",
+      "icon": "👤"
+    },
+    {
+      "title": "Technology",
+      "icon": "💻"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "Ramayana Stories",
+      "author": "Valmiki",
+      "category": "Stories",
+      "pdfUrl": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "cover": "logo.png",
+      "featured": true,
+      "description": "Famous epic story of Lord Rama"
+    },
+    {
+      "id": 2,
+      "title": "Basic Science for Kids",
+      "author": "VDL Team",
+      "category": "Science",
+      "pdfUrl": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "cover": "logo.png",
+      "featured": false,
+      "description": "Simple science concepts for children"
+    },
+    {
+      "id": 3,
+      "title": "Indian History",
+      "author": "History Dept",
+      "category": "History",
+      "pdfUrl": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "cover": "logo.png",
+      "featured": true,
+      "description": "Journey through Indian history"
+    }
+  ]
+}

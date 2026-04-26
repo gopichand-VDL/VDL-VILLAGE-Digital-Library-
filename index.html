@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VDL-VILLAGE Digital Library</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#22c55e">
+  <style>
+    :root{--bg:#0f172a;--card:#1e293b;--text:#fff;--green:#22c55e}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:var(--bg);color:var(--text);font-family:sans-serif;padding:15px}
+   .header{text-align:center;margin-bottom:20px}
+   .logo{width:70px;border-radius:50%;margin-bottom:10px}
+    h1{color:var(--green);font-size:24px}
+   .search{width:100%;padding:12px;border-radius:10px;border:none;background:var(--card);color:var(--text);margin:15px 0}
+   .categories{display:flex;gap:8px;overflow-x:auto;padding:10px 0}
+   .cat-btn{padding:8px 16px;background:var(--card);border:none;border-radius:20px;color:var(--text);white-space:nowrap}
+   .cat-btn.active{background:var(--green);color:#000}
+   .section-title{margin:20px 0 10px;font-size:18px}
+   .books{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+   .book{background:var(--card);padding:12px;border-radius:12px;text-align:center}
+   .book img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+   .book h3{font-size:14px;margin:8px 0 4px}
+   .book p{font-size:12px;opacity:0.7}
+   .btn{background:var(--green);color:#000;border:none;padding:8px;border-radius:6px;width:100%;margin-top:8px;font-weight:bold}
+   .admin-link{position:fixed;bottom:20px;right:20px;background:var(--green);color:#000;padding:12px;border-radius:50%;text-decoration:none;font-size:20px}
+    @media(min-width:768px){.books{grid-template-columns:repeat(4,1fr)}}
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="logo.png" class="logo" alt="VDL">
+    <h1>📚 VDL-VILLAGE Digital Library 📚</h1>
+    <p>Free Books for Everyone</p>
+  </div>
+  <input type="text" class="search" id="searchBox" placeholder="🔍 Search books, authors...">
+  <div class="categories" id="catList"></div>
+  <h2 class="section-title">⭐ Featured Books</h2>
+  <div class="books" id="featuredBooks"></div>
+  <h2 class="section-title">📚 All Books</h2>
+  <div class="books" id="allBooks"></div>
+  <a href="/admin/" class="admin-link">🔐</a>
+  <script>
+    let allBooks = [], categories = [];
+    fetch('books.json').then(r=>r.json()).then(data=>{
+      allBooks = data.books; 
+      categories = data.categories;
+      renderCategories(); 
+      renderBooks(allBooks); 
+      renderFeatured();
+    }).catch(e=>{
+      document.getElementById('allBooks').innerHTML = '<p>Books load cheyadaniki books.json file kavali</p>';
+    });
+    
+    function renderCategories(){
+      const catList = document.getElementById('catList');
+      catList.innerHTML = `<button class="cat-btn active" onclick="filterCat('all')">All</button>`;
+      categories.forEach(cat=>{
+        if(typeof cat === 'object'){
+          catList.innerHTML += `<button class="cat-btn" onclick="filterCat('${cat.title}')">${cat.icon || '📚'} ${cat.title}</button>`;
+        }else{
+          catList.innerHTML += `<button class="cat-btn" onclick="filterCat('${cat}')">📚 ${cat}</button>`;
+        }
+      });
+    }
+    
+    function filterCat(cat){
+      document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+      event.target.classList.add('active');
+      const filtered = cat==='all'? allBooks : allBooks.filter(b=>b.category===cat);
+      renderBooks(filtered);
+    }
+    
+    document.getElementById('searchBox').addEventListener('input',e=>{
+      const q = e.target.value.toLowerCase();
+      const filtered = allBooks.filter(b=> 
+        b.title.toLowerCase().includes(q) || 
+        b.author.toLowerCase().includes(q)
+      );
+      renderBooks(filtered);
+    });
+    
+    function renderBooks(books){
+      if(books.length===0){
+        document.getElementById('allBooks').innerHTML = '<p style="grid-column:1/-1;text-align:center">Books levu</p>';
+        return;
+      }
+      document.getElementById('allBooks').innerHTML = books.map(b=>`
+        <div class="book">
+          <img src="${b.cover || 'logo.png'}" alt="${b.title}">
+          <h3>${b.title}</h3>
+          <p>${b.author}</p>
+          <p>📂 ${b.category}</p>
+          <button class="btn" onclick="window.open('${b.pdfUrl}')">Read PDF</button>
+        </div>`).join('');
+    }
+    
+    function renderFeatured(){
+      const featured = allBooks.filter(b=>b.featured);
+      if(featured.length===0){
+        document.getElementById('featuredBooks').innerHTML = '<p style="grid-column:1/-1;text-align:center;opacity:0.5">Featured books levu</p>';
+        return;
+      }
+      document.getElementById('featuredBooks').innerHTML = featured.map(b=>`
+        <div class="book">
+          <img src="${b.cover || 'logo.png'}" alt="${b.title}">
+          <h3>${b.title}</h3>
+          <button class="btn" onclick="window.open('${b.pdfUrl}')">Read Now</button>
+        </div>`).join('');
+    }
+    
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>
