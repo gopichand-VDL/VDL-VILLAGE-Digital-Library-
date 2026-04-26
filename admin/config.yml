@@ -38,7 +38,7 @@ collections:
           - {label: "✍️ Writing", value: "writing"}
           - {label: "📋 List", value: "list"}
           - {label: "🔍 Research", value: "research"}     
-        default:"books"
+        default: "books"
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Cover Image", name: "cover", widget: "image", required: false}
       - {label: "PDF File", name: "pdf", widget: "file", required: false}
