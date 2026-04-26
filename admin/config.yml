@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: gopichand-VDL/VDL-VILLAGE-Digital-Library-
   branch: main
 
 media_folder: "images/uploads"
@@ -8,24 +9,24 @@ public_folder: "/images/uploads"
 collections:
     - name: "books"
     label: "Books"
-    icon: "auto_stories"        
+    icon: "auto_stories"
     folder: "_books"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Book Title", name: "title", widget: "string"}
-      - {label: "Author Name", name: "author", widget: "string"}
-      - label: "Category"
+            - {label: "Book Title", name: "title", widget: "string"}
+            - {label: "Author Name", name: "author", widget: "string"}
+            - label: "Category"
         name: "category"
         widget: "select"
-    options:
-      - Story
-      - Science
-      - History
-      - Telugu
-      - English
-      - Kids
-    default: "Story" 
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Cover Image", name: "cover_image", widget: "image", required: false}
-      - {label: "PDF File", name: "pdf_file", widget: "file", required: false}
+        options:
+                    - Story
+                    - Science
+                    - History
+                    - Telugu
+                    - English
+                    - Kids
+        default: "Story"
+            - {label: "Description", name: "description", widget: "text"}
+            - {label: "Cover Image", name: "cover_image", widget: "image", required: false}
+            - {label: "PDF File", name: "pdf_file", widget: "file", required: false}
