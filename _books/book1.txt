@@ -1,0 +1,6 @@
+Book Title: Ramayanam
+Author Name: Valmiki
+Category: Story
+Description: Manchi kadha pillalaki
+Cover Image: [Upload] phone lo cover photo select chey
+PDF File: [Upload] book pdf select chey
