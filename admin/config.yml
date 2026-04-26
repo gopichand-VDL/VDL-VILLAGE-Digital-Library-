@@ -28,7 +28,7 @@ collections:
           - {label: "🎙️ Podcast", value: "podcast"}
           - {label: "🥁 Drums", value: "drums"}
           - {label: "🎤 Singing", value: "singing"}
-          - {label: "🎸 Instruments", value:"instruments"}
+         - {label: "🎸 Instruments", value:"instruments"}
           - {label: "📞 Contact", value: "contact"}
           - {label: "📱 Mobile", value: "mobile"}
           - {label: "👑 Royal", value: "royal"}
