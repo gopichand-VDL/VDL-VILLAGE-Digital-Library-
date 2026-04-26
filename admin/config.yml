@@ -1,42 +1,24 @@
-backend:
+ backend:
   name: git-gateway
   branch: main
-  identity_url: "https://vdl-village.netlify.app/.netlify/identity"
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
     - name: "categories"
-    label: "📂 Categories"
+    label: "Categories"
     folder: "_categories"
     create: true
     slug: "{{slug}}"
     fields:
-            - {label: "Category Name", name: "title", widget: "string", hint: "Ex: Telugu Stories"}
-            - label: "Category Icon"
+            - {label: "Category Name", name: "title", widget: "string"}
+            - label: "Icon"
         name: "icon"
         widget: "select"
         options:
                     - {label: "📚 Books", value: "📚"}
-                    - {label: "🔬 Science", value: "🔬"}
-                    - {label: "🏛️ History", value: "🏛️"}
-                    - {label: "😂 Comics", value: "😂"}
-                    - {label: "👤 Biography", value: "👤"}
-                    - {label: "💻 Technology", value: "💻"}
-                    - {label: "🎭 Stories", value: "🎭"}
-                    - {label: "🌍 Geography", value: "🌍"}
-                    - {label: "🎨 Art", value: "🎨"}
-                    - {label: "🎵 Music", value: "🎵"}
-                    - {label: "🌳 Nature", value: "🌳"}
-                    - {label: "🌨️ Weather", value: "🌨️"}
-                    - {label: "🌕 Astronomy", value: "🌕"}
-                    - {label: "🐬 Animals", value: "🐬"}
-                    - {label: "🐚 Ocean", value: "🐚"}
-                    - {label: "🍗 Food", value: "🍗"}
-                    - {label: "🍿 Entertainment", value: "🍿"}
-                    - {label: "🚇 Transport", value: "🚇"}
-                    - {label: "🚀 Space", value: "🚀"}
+                    - {label: "🚀 Rocket", value: "🚀"}
                     - {label: "🏡 Home", value: "🏡"}
                     - {label: "🌐 Internet", value: "🌐"}
                     - {label: "⚽ Sports", value: "⚽"}
@@ -55,7 +37,7 @@ collections:
                     - {label: "📋 List", value: "📋"}
                     - {label: "🔎 Research", value: "🔎"}
         default: "📚"
-        hint: "Category kosam 36 icons lo okati select chey"
+        hint: "Category kosam icon select chey"
 
     - name: "books"
     label: "📚 Books"
@@ -72,8 +54,7 @@ collections:
         search_fields: ["title"]
         value_field: "title"
         display_fields: ["icon", "title"]
-        hint: "Icon tho category kanipistadi"
-            - {label: "PDF File", name: "pdfUrl", widget: "file"}
+        hint: "Icon tho category select chey"
+            - {label: "Description", name: "description", widget: "text"}
             - {label: "Cover Image", name: "cover", widget: "image", required: false}
-            - {label: "Description", name: "description", widget: "text", required: false}
-            - {label: "Featured Book?", name: "featured", widget: "boolean", default: false}
+            - {label: "PDF File", name: "pdf", widget: "file", required: false}
