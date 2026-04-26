@@ -6,7 +6,7 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  - name: "books"
+    - name: "books"
     label: "Books"
     icon: "auto_stories"        # Sidebar lo book icon vastadi
     folder: "_books"
