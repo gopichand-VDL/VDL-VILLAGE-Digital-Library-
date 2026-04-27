@@ -32,7 +32,7 @@
       "author": "Valmiki",
       "category": "Stories",
       "pdfUrl": "https://www.readramayana.org.",
-      "cover": "logo.png",
+      "cover": "rama.png",
       "featured": true,
       "description": "Famous epic story of Lord Rama"
     },
@@ -42,7 +42,7 @@
       "author": "VDL Team",
       "category": "Science",
       "pdfUrl": "https://www.google.com/url?sa=i&source=web&rct=j&url=https://science.nasa.gov/multimedia/science-e-books/&ved=2ahUKEwif7r2zv46UAxWyUfUHHbAsO6EQy_kOegQIBRAC&opi=89978449&cd&psig=AOvVaw3ZAajziULm1lsjRUqlyfH4&ust=1777395246225000",
-      "cover": "logo.png",
+      "cover": "science.png",
       "featured": false,
       "description": "Simple science concepts for children"
     },
@@ -52,7 +52,7 @@
       "author": "History Dept",
       "category": "History",
       "pdfUrl":" https://www.google.com/url?sa=i&source=web&rct=j&url=https://tehattagovtcollege.ac.in/Pdf/Resources/History/Online-learning/PDF-Book/INDIAN%2520HISTORY%2520ANCIENT%2520TIME/A%2520History%2520of%2520ancient%2520an%2520early%2520mideaval%2520India%2520by%2520Upinder%2520sing.pdf&ved=2ahUKEwi594j6v46UAxXncGwGHUmzEXMQy_kOegQIAxAH&opi=89978449&cd&psig=AOvVaw2lWz_IT0Q3NxPLWcQg5m0C&ust=1777395394255000",
-      "cover": "logo.png",
+      "cover": "india.png",
       "featured": true,
       "description": "Journey through Indian history"
     }
